@@ -2,7 +2,7 @@ class Transfer
   attr_accessor :status, :amount
   attr_reader :sender, :receiver
   
-  @@transac_hist = []
+  @@transaction_hist = []
   
   def initialize(sender, receiver, amount)
     @sender = sender
@@ -19,6 +19,7 @@ class Transfer
     sender.balance -= @amount
     
     if valid?
+      
       receiver.deposit(@amount)
       @status = "complete"
       @amount = 0
