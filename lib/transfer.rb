@@ -34,6 +34,7 @@ class Transfer
     if status == "complete"
       @sender.deposit(@@transaction_hist.last)
       @receiver.balance -= @@transaction_hist
+      @@transaction_hist.delete(@@transaction_hist.last)
       @status = "reversed"
     end
   end
