@@ -19,7 +19,7 @@ class Transfer
     sender.balance -= @amount
     
     if valid?
-      transaction_hist << @amount
+      @@transaction_hist << @amount
       receiver.deposit(@amount)
       @status = "complete"
       @amount = 0
