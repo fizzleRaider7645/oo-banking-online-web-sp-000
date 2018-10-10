@@ -2,6 +2,8 @@ class Transfer
   attr_accessor :status, :amount
   attr_reader :sender, :receiver
   
+  @@transac_hist = []
+  
   def initialize(sender, receiver, amount)
     @sender = sender
     @receiver = receiver
