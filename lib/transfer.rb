@@ -33,7 +33,7 @@ class Transfer
   def reverse_transfer
     if status == "complete"
       @sender.deposit(@@transaction_hist.last)
-      @receiver.balance
+      @receiver.balance -= @@transaction_hist
     end
   end
 end
